@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Min min</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <div id="authScreen">
+            <h1>Min min</h1>
+            <p>Введіть ім'я, щоб зберегти рекорди:</p>
+            <input type="text" id="playerName" placeholder="Ваше ім'я..." maxlength="15">
+            
+            <p>Оберіть складність гри:</p>
+            <div class="difficulty-container">
+                <label>
+                    <input type="radio" name="difficulty" value="easy" checked> Легкий
+                </label>
+                <label>
+                    <input type="radio" name="difficulty" value="medium"> Середній
+                </label>
+                <label>
+                    <input type="radio" name="difficulty" value="hard"> Складний
+                </label>
+            </div>
+
+            <button onclick="startWithProfile()">Почати грати</button>
+        </div>
+
+        <canvas id="GameMin"></canvas>
+        <div id="gameOverScreen" class="hidden">
+            <h1>Ой, ви врізались, спробуйте ще раз!</h1>
+            <p>Ваш рахунок: <span id="finalScore">0</span></p>
+            <button onclick="resetGame()">Try again</button>
+        </div>
+    </div>
+
+    <script src="cat.js"></script>
+    <script src="pipe.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
