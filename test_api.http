@@ -1,0 +1,42 @@
+@hostname = localhost
+@port = 5208
+@host = http://{{hostname}}:{{port}}
+
+### Отримати список усіх рівнів
+GET {{host}}/api/levels
+Accept: application/json
+
+###
+
+### Отримати список усіх гравців
+GET {{host}}/api/players
+Accept: application/json
+
+###
+
+### Створити нового гравця (Наприклад, тебе)
+POST {{host}}/api/players
+Content-Type: application/json
+
+{
+    "name": "Алла Науменко",
+    "registrationDate": "2026-05-08"
+}
+
+###
+
+### Додати новий рекорд для гравця
+# Увага: переконайся, що PlayerId (Код гравця) існує в базі (зазвичай це 1)
+POST {{host}}/api/scores
+Content-Type: application/json
+
+{
+    "value": 1500,
+    "playerId": 1
+}
+
+###
+
+### Отримати Топ-10 рекордів
+GET {{host}}/api/scores/top
+Accept: application/json
